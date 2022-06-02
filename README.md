@@ -14,9 +14,11 @@ The rover itself carries the following components:
 - Connectivity: iPhone, opening a local hotspot. Both ESP32 and the cloud main processor need to be in the same network
 - Mover: 40V battery powered lawn mover
 
+The cloud main processor is a python programm (will upload it soon).
+
 ## Improvements needed
 ### Must haves: 
-- The ESP32 should connect to the internet & the cloud main processor via mobile network, using https://www.amazon.de/gp/product/B081JMWSVD/. The internet connect is needed for 4 things:
+- The ESP32 should connect to the internet & the cloud main processor via mobile network, using https://www.amazon.de/gp/product/B081JMWSVD/. The internet connection is needed for 4 things:
   - Submit driving commands from cloud main processor to motor control board.
   - Submit motor parameters from motor control board to cloud main processor.
   - Retrieve GPS correciton data from the internet
@@ -24,6 +26,8 @@ The rover itself carries the following components:
 - There should be a way for over the air updates. 
 ### Nice to haves:
 - Instead of two ESP32, there should only be one needed. If this is not possible, one of the ESP32 need to connect to the other one to use its internet connection.
-- Currently, the connection to the cloud main processor is opend and closed for each package that is.
+- Currently, the connection to the cloud main processor is opend and closed for each package that is transmitted. Not sure if this is ideal as:
+  - The GPS receiver sends a continious stream of data
+  - A continously open connection would be a good safety indicator: If the connection is interrupted, the rover should stop.
 
 The code can either be an Arduino file, but also any other method is possible, if proper compliation instructions are included. 
