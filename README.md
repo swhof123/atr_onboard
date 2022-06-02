@@ -10,7 +10,7 @@ The rover itself carries the following components:
 - High precision GPS: Ardusimple simpleRTK2B
 - Onboard CPU: Two ESP32. 
   - One ESP32 relaying the motor control and the mower to the cloud main processor, running the software shared in this repro. The initial version is based on the example provided by Emanuel Feru: https://github.com/EFeru/hoverboard-firmware-hack-FOC/tree/master/Arduino/hoverserial
-  - One ESP32 relaying the GPS unit to the cloud processor, running https://github.com/nebkat/esp32-xbee
+  - One ESP32 relaying the GPS unit to the cloud processor, running https://github.com/nebkat/esp32-xbee, https://www.ardusimple.com/wifi-ntrip-master-hookup-guide/
 - Connectivity: iPhone, opening a local hotspot. Both ESP32 and the cloud main processor need to be in the same network
 - Mover: 40V battery powered lawn mover
 
